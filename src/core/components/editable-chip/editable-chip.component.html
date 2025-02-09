@@ -1,0 +1,14 @@
+@if(isInputVisible) {
+  <editable-chip-input [value]="value"
+                       (submit)="onEdit($event)"
+                       (cancel)="hideInput()">
+  </editable-chip-input>
+} @else {
+  <mat-chip (removed)="onRemove()"
+            (dblclick)="showInput()"
+            [matTooltip]="tooltip">
+    {{ value }}
+    <mat-icon matChipRemove>cancel</mat-icon>
+  </mat-chip>
+}
+
